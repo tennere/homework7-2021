@@ -7,8 +7,8 @@ window.addEventListener("load", function() {
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
+	volume.innerHTML = document.getElementById('slider').value+ '%';
 });
-
 
 document.querySelector("#pause").addEventListener("click", function() {
 	console.log("Pause Video");
@@ -26,7 +26,6 @@ document.querySelector("#faster").addEventListener("click", function() {
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
-
 	if ( (video.currentTime + 15) >= video.duration ){
 		video.currentTime = 0;
 		console.log("Going back to beginning")
@@ -39,7 +38,6 @@ document.querySelector("#skip").addEventListener("click", function() {
 });
 
 document.querySelector("#mute").addEventListener("click", function() {
-	
 	if (video.muted == false) {
 		video.muted = true;
 		mute.innerHTML = 'Unmute'
